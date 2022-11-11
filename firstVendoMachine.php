@@ -50,6 +50,13 @@
                 $selecteddrinks = $_POST['chkdrinks'];
                 $size = $_POST['selectedSizes'];
                 $quantity = $_POST['setQuant'];
+
+                if ($quantity == 1) {
+                    $term = "piece";   
+                }
+                else{
+                    $term = "pieces";   
+                }
                 
                 $totalQuant = $quantity * count($selecteddrinks);
                 $totalAmount = 0;
@@ -59,7 +66,7 @@
                     foreach($selecteddrinks as $drnkKey => $drinksName) {
                         $amount = ($drinks[$drinksName] + $size) * $quantity;
                         $totalAmount += $amount;
-                        echo '<li>' . $quantity . ($quantity > 1 ? ' pieces' : ' piece') . ' of ' . $drinksizes[$size] . ' ' . $drinksName . ' amounting to ₱ ' . $amount . '</li>';                        
+                        echo '<li>' . $quantity . " $term " . ' of ' . $drinksizes[$size] . ' ' . $drinksName . ' amounting to ₱ ' . $amount . '</li>';                        
                     }
                 echo '</ul>';
                 echo '<b>Total Number of Items: </b>' . $totalQuant . '<br>';
