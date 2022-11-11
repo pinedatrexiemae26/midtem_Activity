@@ -13,7 +13,7 @@
 	<h1>Peys App</h1>
 
         <label for ="setRange">Select Photo Size: </label>
-		<input type="range" name="setRange" id="setRange" min="0" max="1000" steps="10" value="60">
+		<input type="range" name="setRange" id="setRange" min="0" max="100" steps="10" value="60">
 		<br>
         <label for="bdrColor">Select Border Color:</label>
         <input type="color" name="bdrColor" id="bdrColor">
